@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /*
 // function declaration
@@ -180,7 +180,6 @@ if (markBMI > johnBMI) {
 for (let val = 0; val < 10; val++) {
   console.log("sample string");
 }
-*/
 
 const jonasArray = ["jonas", 28, "teacher", ["steven", "peter", "bob"]];
 for (let i = 0; i < jonasArray.length; i++) {
@@ -200,3 +199,77 @@ for (let i = 0; i < jonasArray.length; i++) {
   }
   console.log(jonasArray[i]);
 }
+
+// looping backwards
+const jonasArray = ["jonas", 28, "teacher", ["steven", "peter", "bob"]];
+for (let i = jonasArray.length - 1; i >= 0; i--) {
+  console.log(jonasArray[i]);
+}
+
+for (let set = 1; set < 5; set++) {
+  console.log("starting new set");
+  for (let rep = 1; rep < 10; rep++) {
+    console.log("starting new rep");
+  }
+}
+let counter = 0;
+while (counter <= 10) {
+  console.log(counter);
+  counter++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while (dice != 6) {
+  console.log(`Dice values this time was : ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+}
+
+
+// coding challenge
+const billArray = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tipArray = [];
+const total = [];
+
+const calcTip = function (billValue) {
+  if (billValue >= 50 && billValue <= 300) {
+    return (15 / 100) * billValue;
+  } else {
+    return (20 / 100) * billValue;
+  }
+};
+
+const calcAverage = function (arr) {
+  let sumOfAllElements = 0;
+  let avg;
+  for (let i = 0; i < arr.length; i++) {
+    sumOfAllElements += arr[i];
+  }
+  avg = sumOfAllElements / arr.length;
+  console.log(avg);
+};
+
+for (let i = 0; i < billArray.length; i++) {
+  tipArray[i] = calcTip(billArray[i]);
+  total[i] = billArray[i] + tipArray[i];
+}
+
+console.log(billArray);
+console.log(tipArray);
+console.log(total);
+calcAverage([2, 3, 7]);
+*/
+
+const printForecast = function (tempArr) {
+  let resultString = '';
+  let degreeCelsius = '°C';
+  let dotString = '...';
+  for (let i = 0; i < tempArr.length; i++) {
+    let tmpString = `${tempArr[i]}`;
+    resultString += dotString + tmpString + degreeCelsius + ` in ${i + 1} days`;
+  }
+  console.log(resultString);
+};
+
+const tempArr = [17, 21, 23];
+printForecast(tempArr);
